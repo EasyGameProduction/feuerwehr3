@@ -1,0 +1,25 @@
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: #C00000 !important;
+}
+
+.Ueberschrift{
+    text-align: center;
+    color: white !important;
+}
+
+#Content{
+    background-color: white !important;
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+    border: black solid 3px;
+    border-radius: 15px;
+    max-height: 27rem;
+}
+
+#HomeButton{
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
