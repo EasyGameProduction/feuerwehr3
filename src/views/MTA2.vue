@@ -41,7 +41,8 @@
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
 import {ref, onMounted} from 'vue'
-
+import Swal from 'sweetalert2'
+    
 export default {
     name: 'MTA2',
     components: {
