@@ -6,6 +6,7 @@ import HilfeImWald from '../views/HilfeImWald.vue'
 import GefahrgutView from '../views/GefahrgutView.vue'
 import LernView from '../views/LernView.vue'
 import MTA2 from '../views/MTA2.vue'
+import LeistungspruefungTHL from '../views/LeistungspruefungTHL.vue'
 
 const routes = [
   {
@@ -42,6 +43,11 @@ const routes = [
     path: '/mta2',
     name: 'mta2',
     component: MTA2
+  },
+  {
+    path: '/leistungspruefung-thl',
+    name: 'leistungspruefung-thl',
+    component: LeistungspruefungTHL
   }
 ]
 

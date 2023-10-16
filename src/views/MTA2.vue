@@ -3,12 +3,11 @@
     <div id="mta2">
         <div>
             <center>
-                <img class="col-12" id="Bild" ref="Bild"><br>
-                <h4 id="Frage" ref="Frage">Frage</h4>
+                <img class="col-12" id="Bild" ref="Bild" :src="image"><br>
+                <h2 id="Frage" ref="Frage">Frage</h2>
             </center>
         </div>
         <div id="Eingabe">
-            <center>
                 <div id="Antwort1" ref="Antwort1" class="d-flex align-items-center">
                     <input class="col-2" type="checkbox" id="checkbox1" ref="checkbox1"><label class="col-10" for="checkbox1"
                         id="checkbox1Label" ref="checkbox1Label">Antwort 1</label>
@@ -27,12 +26,11 @@
                 </div>
                 <button id="buttonAbschicken" ref="buttonAbschicken" @click="checkAnswer" class="btn btn-success">Abschicken</button>
                 <button id="buttonWeiter" ref="buttonWeiter" @click="next" class="btn btn-secondary">Nächste Frage</button>
-            </center>
         </div>
         <br>
         <div class="Aufgabenzahl">
             <center>
-                <h5 id="Aufgabe" ref="Aufgabe"></h5>
+                <h3 id="Aufgabe" ref="Aufgabe"></h3>
             </center>
         </div>
     </div>
@@ -894,6 +892,7 @@ export default {
             ],
             fehler: 0,
             index: 0,
+            image: "",
         }
     },
     methods: {
@@ -902,7 +901,7 @@ export default {
             this.index = 0;
             this.fehler = 0;
             this.fragen = this.shuffle(this.fragen);
-            //this.$refs["Aufgabe"].innerHTML = "Aufgabe: 1" + "/" + this.fragen.length.toString();
+            this.$refs["Aufgabe"].innerHTML = "Aufgabe: 1" + "/" + this.fragen.length.toString();
             this.setFields();
         },
         setFields: function () {
@@ -926,7 +925,7 @@ export default {
             }
             if (this.fragen[this.index][6] != "") {
                 this.$refs["Bild"].hidden = false;
-                this.$refs["Bild"].src = require(this.fragen["../assets/MTA2/" + this.index[6]]);
+                this.image = require("../assets/MTA2/" + this.fragen[this.index][6]);
             } else {
                 this.$refs["Bild"].hidden = true;
             }
@@ -1065,8 +1064,34 @@ export default {
 
 <style lang="scss">
 #mta2 {
+    padding-left: 1rem;
+    padding-right: 1rem;
     margin-top: 4.5rem;
     height: 72vh;
     overflow-y: scroll;
+    background-color: white;
+
+    button{
+        //width: 33%;
+        height: 2.7rem;
+        margin-top: 1rem;
+        border: solid rgba(0, 0, 0, 0) 2px;
+        border-radius: 8px;
+        text-align:center;
+        color: white;
+        font-size:larger;
+    }
+
+    #buttonAbschicken{
+        background-color: green;
+    }
+
+    #buttonWeiter{
+        background-color: gray;
+    }
+
+    img{
+        width: 90%;
+    }
 }
 </style>
