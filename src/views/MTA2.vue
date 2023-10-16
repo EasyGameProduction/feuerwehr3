@@ -36,7 +36,7 @@
             </center>
         </div>
     </div>
-    <Footer />
+    <Footer backLink="/lern-hub"/>
 </template>
 
 <script>
