@@ -1054,6 +1054,11 @@ export default {
     },
     created(){
         //this.startGame();
+    },
+    mounted(){
+        document.onreadystatechange = () => {
+            this.startGame();
+        }
     }
 }
 </script>
