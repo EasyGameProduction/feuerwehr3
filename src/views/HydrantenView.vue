@@ -28,8 +28,8 @@ export default {
     data(){
         return{
             zoom: 50,
-            lat: 0,
-            long: 0,
+            lat: 50.104040,
+            long: 10.143591,
         }
     },
     created(){
