@@ -7,7 +7,7 @@
         layer-type="base"
         name="OpenStreetMap"
       ></l-tile-layer>
-      <l-marker :lat-lng="this.markerPosition">
+      <l-marker @click="hydrantOnClick('Überflurhydrant:<br><hr>400 l/min', 'Direkt gegenüber vom Haupteingang')" :lat-lng="this.markerPosition">
         <l-icon>
             <img class="iconImg" src="../assets/KartenIcons/Hydrant.svg">
         </l-icon>
@@ -21,6 +21,7 @@
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import { LMap, LTileLayer, LMarker, LIcon } from "@vue-leaflet/vue-leaflet";
+import Swal from 'sweetalert2'
 
 export default {
   name: "HydrantenView",
@@ -55,7 +56,13 @@ export default {
       navigator.geolocation.getCurrentPosition(success, error);
     },
     setHydrant: function (lat, long, durchlaufmenge, bemerkung) {
-
+        console.log("setHydrant");
+    },
+    hydrantOnClick: function (durchlaufmenge, bemerkung){
+        Swal.fire(
+            durchlaufmenge,
+            bemerkung
+        )
     }
   },
   created() {
