@@ -7,11 +7,9 @@
         layer-type="base"
         name="OpenStreetMap"
       ></l-tile-layer>
-      <l-marker @click="hydrantOnClick('Überflurhydrant:<br><hr>400 l/min', 'Direkt gegenüber vom Haupteingang')" :lat-lng="this.markerPosition">
-        <l-icon>
-            <img class="iconImg" src="../assets/KartenIcons/Hydrant.svg">
-        </l-icon>
-      </l-marker>
+      <span v-for="item in this.hydranten" :key="item.id">
+        <Marker :art="item.art" :durchlaufmenge="item.durchlaufmenge" :bemerkung="item.bemerkung" :lat="item.lat" :lng="item.lng"/>
+      </span>
     </l-map>
   </div>
   <Footer backLink="/einsatz" />
@@ -20,8 +18,8 @@
 <script>
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
-import { LMap, LTileLayer, LMarker, LIcon } from "@vue-leaflet/vue-leaflet";
-import Swal from 'sweetalert2'
+import { LMap, LTileLayer } from "@vue-leaflet/vue-leaflet";
+import Marker from "@/components/Marker.vue";
 
 export default {
   name: "HydrantenView",
@@ -30,16 +28,14 @@ export default {
     Footer,
     LMap,
     LTileLayer,
-    LMarker,
-    LIcon
+    Marker
   },
   data() {
     return {
       zoom: 50,
       lat: 50.10404,
       long: 10.143591,
-      markerPosition: [50.104254, 10.143308],
-      iconText: "400",
+      hydranten: this.$store.state.hydranten,
     };
   },
   methods: {
@@ -54,15 +50,6 @@ export default {
       };
 
       navigator.geolocation.getCurrentPosition(success, error);
-    },
-    setHydrant: function (lat, long, durchlaufmenge, bemerkung) {
-        console.log("setHydrant");
-    },
-    hydrantOnClick: function (durchlaufmenge, bemerkung){
-        Swal.fire(
-            durchlaufmenge,
-            bemerkung
-        )
     }
   },
   created() {
