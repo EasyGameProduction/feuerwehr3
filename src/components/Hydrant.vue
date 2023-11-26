@@ -11,7 +11,7 @@ import { LMarker, LIcon } from "@vue-leaflet/vue-leaflet";
 import Swal from 'sweetalert2'
 
 export default {
-  name: "Marker",
+  name: "Hydrant",
   components: {
     LMarker,
     LIcon

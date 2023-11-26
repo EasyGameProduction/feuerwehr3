@@ -7,8 +7,11 @@
         layer-type="base"
         name="OpenStreetMap"
       ></l-tile-layer>
+      <span v-for="leitung in this.leitungen" :key="leitung.id">
+        <Leitung :coords="leitung.coords"/>
+      </span>
       <span v-for="item in this.hydranten" :key="item.id">
-        <Marker :art="item.art" :durchlaufmenge="item.durchlaufmenge" :bemerkung="item.bemerkung" :lat="item.lat" :lng="item.lng"/>
+        <Hydrant :art="item.art" :durchlaufmenge="item.durchlaufmenge" :bemerkung="item.bemerkung" :lat="item.lat" :lng="item.lng"/>
       </span>
     </l-map>
   </div>
@@ -19,7 +22,8 @@
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import { LMap, LTileLayer } from "@vue-leaflet/vue-leaflet";
-import Marker from "@/components/Marker.vue";
+import Hydrant from "@/components/Hydrant.vue";
+import Leitung from "@/components/Leitung.vue";
 
 export default {
   name: "HydrantenView",
@@ -28,7 +32,8 @@ export default {
     Footer,
     LMap,
     LTileLayer,
-    Marker
+    Hydrant,
+    Leitung
   },
   data() {
     return {
@@ -36,6 +41,7 @@ export default {
       lat: 50.10404,
       long: 10.143591,
       hydranten: this.$store.state.hydranten,
+      leitungen: this.$store.state.leitungen,
     };
   },
   methods: {
