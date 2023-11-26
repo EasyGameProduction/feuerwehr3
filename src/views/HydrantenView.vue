@@ -8,7 +8,7 @@
         name="OpenStreetMap"
       ></l-tile-layer>
       <span v-for="leitung in this.leitungen" :key="leitung.id">
-        <Leitung :coords="leitung.coords"/>
+        <Leitung :coords="leitung.coords" :bezeichnung="leitung.bezeichnung"/>
       </span>
       <span v-for="item in this.hydranten" :key="item.id">
         <Hydrant :art="item.art" :durchlaufmenge="item.durchlaufmenge" :bemerkung="item.bemerkung" :lat="item.lat" :lng="item.lng"/>

@@ -1,10 +1,11 @@
 <template>
     <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
-    <l-polyline :lat-lngs="polyline.latlngs" :color="polyline.color"></l-polyline>
+    <l-polyline  @click="leitungOnClick()" :lat-lngs="polyline.latlngs" :color="polyline.color"></l-polyline>
 </template>
 
 <script>
 import { LTileLayer, LPolyline } from "@vue-leaflet/vue-leaflet";
+import Swal from 'sweetalert2'
 
 export default {
   name: "Leitung",
@@ -14,6 +15,7 @@ export default {
   },
   props: {
     coords: Array,
+    bezeichnung: String
   },
   data() {
     return {
@@ -27,7 +29,11 @@ export default {
     };
   },
   methods: {
-
+    leitungOnClick: function (){
+        Swal.fire(
+            this.$props.bezeichnung
+        )
+    }
   },
   created(){
     console.log(this.$props.coords);
@@ -35,6 +41,7 @@ export default {
       this.polyline.latlngs.push(this.$props.coords[i])
       console.log(this.polyline.latlngs);
     }
+    console.log(this.$props.bezeichnung);
   }
 };
 </script>

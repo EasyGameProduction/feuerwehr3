@@ -81,6 +81,7 @@ export default createStore({
       leitungen: [
         {
           id: 0,
+          bezeichnung: "PVC DN 200 PN 10",
           coords:[
           [50.101476, 10.142244], 
           [50.101249, 10.141753], 
