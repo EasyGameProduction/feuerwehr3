@@ -61,6 +61,8 @@ export default {
       };
 
       navigator.geolocation.watchPosition(success, error, {
+        timeout: 2000, 
+        maximumAge: 3000,
         enableHighAccuracy:true,
       });
     }
