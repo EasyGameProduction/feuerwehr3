@@ -51,5 +51,6 @@ export default {
     left: 50%;
     transform: translateX(-50%);
     max-height: 2.5rem !important;
+    
   }
 </style>

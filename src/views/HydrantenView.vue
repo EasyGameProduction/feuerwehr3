@@ -13,6 +13,9 @@
       <span v-for="item in this.hydranten" :key="item.id">
         <Hydrant :art="item.art" :durchlaufmenge="item.durchlaufmenge" :bemerkung="item.bemerkung" :lat="item.lat" :lng="item.lng"/>
       </span>
+      <span>
+        <Position :lat="this.lat" :lng="this.long"/>
+      </span>
     </l-map>
   </div>
   <Footer backLink="/einsatz" />
@@ -24,6 +27,7 @@ import Footer from "@/components/Footer.vue";
 import { LMap, LTileLayer } from "@vue-leaflet/vue-leaflet";
 import Hydrant from "@/components/Hydrant.vue";
 import Leitung from "@/components/Leitung.vue";
+import Position from "@/components/Position.vue";
 
 export default {
   name: "HydrantenView",
@@ -33,7 +37,8 @@ export default {
     LMap,
     LTileLayer,
     Hydrant,
-    Leitung
+    Leitung,
+    Position
   },
   data() {
     return {
@@ -55,7 +60,9 @@ export default {
         console.log(error);
       };
 
-      navigator.geolocation.getCurrentPosition(success, error);
+      navigator.geolocation.watchPosition(success, error, {
+        enableHighAccuracy:true,
+      });
     }
   },
   created() {
@@ -76,6 +83,11 @@ export default {
     transform: translateX(-50%);
     bottom: -100%;
     max-height: 2.5rem !important;
+  }
+
+  .leaflet-marker-icon{
+    background: none !important;
+    border: none !important;
   }
 }
 </style>
