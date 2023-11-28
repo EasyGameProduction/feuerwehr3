@@ -8,15 +8,21 @@
         name="OpenStreetMap"
       ></l-tile-layer>
       <span v-for="leitung in this.leitungen" :key="leitung.id">
-        <Leitung :coords="leitung.coords" :bezeichnung="leitung.bezeichnung"/>
+        <Leitung v-if="this.leitungenVisible" :coords="leitung.coords" :bezeichnung="leitung.bezeichnung"/>
       </span>
       <span v-for="item in this.hydranten" :key="item.id">
-        <Hydrant :art="item.art" :durchlaufmenge="item.durchlaufmenge" :bemerkung="item.bemerkung" :lat="item.lat" :lng="item.lng"/>
+        <Hydrant v-if="this.hydrantenVisible" :art="item.art" :durchlaufmenge="item.durchlaufmenge" :bemerkung="item.bemerkung" :lat="item.lat" :lng="item.lng"/>
       </span>
       <span>
         <Position :lat="this.lat" :lng="this.long"/>
       </span>
     </l-map>
+    <button id="controlButton" @click="switchMapControl()" class="fa">&#xf013;</button>
+    <span id="mapControl" v-if="mapControlVisible">
+      <button :class="hydrantenVisible?'buttonOn':'buttonOff'" @click="switchHydrantenVisibility()">Hydranten</button>
+      <br>
+      <button :class="leitungenVisible?'buttonOn':'buttonOff'" @click="switchLeitungenVisibility()">Leitungen</button>
+    </span>
   </div>
   <Footer backLink="/einsatz" />
 </template>
@@ -47,6 +53,9 @@ export default {
       long: 10.143591,
       hydranten: this.$store.state.hydranten,
       leitungen: this.$store.state.leitungen,
+      hydrantenVisible: true,
+      leitungenVisible: false,
+      mapControlVisible: false,
     };
   },
   methods: {
@@ -65,6 +74,15 @@ export default {
         maximumAge: 3000,
         enableHighAccuracy:true,
       });
+    },
+    switchHydrantenVisibility(){
+      this.hydrantenVisible = !this.hydrantenVisible;
+    },
+    switchLeitungenVisibility(){
+      this.leitungenVisible = !this.leitungenVisible;
+    },
+    switchMapControl(){
+      this.mapControlVisible = !this.mapControlVisible;
     }
   },
   created() {
@@ -90,6 +108,48 @@ export default {
   .leaflet-marker-icon{
     background: none !important;
     border: none !important;
+  }
+
+  #controlButton{
+    background-color: white !important;
+    position: absolute !important;
+    top: 5rem !important;
+    right: 0.5rem !important;
+    z-index: 1000 !important;
+    padding: 0.5rem !important;
+    border-radius: 7px !important;
+  }
+
+  #mapControl{
+    background-color: white !important;
+    position: absolute !important;
+    top: 6.5rem !important;
+    right: 2rem !important;
+    z-index: 999 !important;
+    padding: 1rem !important;
+    border-radius: 7px !important;
+    border: solid grey 1px;
+
+    button{
+      width: 100%;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      margin-top: 3px;
+      margin-bottom: 3px;
+      font-size:medium;
+      padding-right: 3px;
+      padding-left: 3px;
+    }
+
+    .buttonOn{
+      background-color: green;
+      color: white;
+    }
+
+    .buttonOff{
+      background-color: #C00000;
+      color: white;
+    }
   }
 }
 </style>
