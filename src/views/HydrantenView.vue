@@ -14,7 +14,7 @@
         <Hydrant v-if="this.hydrantenVisible" :art="item.art" :durchlaufmenge="item.durchlaufmenge" :bemerkung="item.bemerkung" :lat="item.lat" :lng="item.lng"/>
       </span>
       <span>
-        <Position :lat="this.lat" :lng="this.long"/>
+        <Position v-if="this.positionVisible" :lat="this.lat" :lng="this.long"/>
       </span>
     </l-map>
     <button id="controlButton" @click="switchMapControl()" class="fa">&#xf013;</button>
@@ -56,6 +56,7 @@ export default {
       hydrantenVisible: true,
       leitungenVisible: false,
       mapControlVisible: false,
+      positionVisible: false,
     };
   },
   methods: {
@@ -63,9 +64,11 @@ export default {
       const success = (position) => {
         this.lat = position.coords.latitude;
         this.long = position.coords.longitude;
+        this.positionVisible = true;
       };
 
       const error = (err) => {
+        this.positionVisible = false;
         console.log(error);
       };
 
