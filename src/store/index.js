@@ -145,7 +145,7 @@ export default createStore({
           art: "Unterflurhydrant",
           lat: "50.099666",
           lng: "10.144080",
-          durchlaufmenge: "80 l/min",
+          durchlaufmenge: "125 l/min",
           bemerkung: "Auf dem Parkplatz"
         },
         {
