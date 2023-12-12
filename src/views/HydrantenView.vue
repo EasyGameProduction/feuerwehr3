@@ -74,7 +74,7 @@ export default {
 
       navigator.geolocation.watchPosition(success, error, {
         //timeout: 2000, 
-        //maximumAge: 3000,
+        maximumAge: 0,
         enableHighAccuracy:true,
       });
     },
@@ -93,6 +93,8 @@ export default {
   }
 };
 </script>
+
+
 
 <style lang="scss">
 #hydranten {
