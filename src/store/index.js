@@ -63,8 +63,8 @@ export default createStore({
         {
           id: 8,
           art: "Unterflurhydrant",
-          lat: "50.103213",
-          lng: "10.144095",
+          lat: "50.102703",
+          lng: "10.144437",
           durchlaufmenge: "80 l/min",
           bemerkung: ""
         },
@@ -202,6 +202,118 @@ export default createStore({
           lat: "50.096162",
           lng: "10.143590",
           durchlaufmenge: "150 l/min",
+          bemerkung: ""
+        },
+        {
+          id: 26,
+          art: "Unterflurhydrant",
+          lat: "50.098327",
+          lng: "10.142031",
+          durchlaufmenge: "80 l/min",
+          bemerkung: "Vor dem Gehsteig in der Mitte des Weges.<br>Hydrantenschild an Hauswand Nr. 7"
+        },
+        {
+          id: 27,
+          art: "Unterflurhydrant",
+          lat: "50.098916",
+          lng: "10.141892",
+          durchlaufmenge: "200 l/min",
+          bemerkung: ""
+        },
+        {
+          id: 28,
+          art: "Unterflurhydrant",
+          lat: "50.103213",
+          lng: "10.144095",
+          durchlaufmenge: "80 l/min",
+          bemerkung: ""
+        },
+        {
+          id: 29,
+          art: "Hydrantart unbekannt",
+          lat: "50.103289",
+          lng: "10.145638",
+          durchlaufmenge: "80 l/min",
+          bemerkung: "Position ungenau"
+        },
+        {
+          id: 30,
+          art: "Unterflurhydrant",
+          lat: "50.100316",
+          lng: "10.141698",
+          durchlaufmenge: "100 l/min",
+          bemerkung: ""
+        },
+        {
+          id: 31,
+          art: "Unterflurhydrant",
+          lat: "50.101528",
+          lng: "10.141456",
+          durchlaufmenge: "150 l/min",
+          bemerkung: ""
+        },
+        {
+          id: 32,
+          art: "Unterflurhydrant",
+          lat: "50.101993",
+          lng: "10.139682",
+          durchlaufmenge: "100 l/min",
+          bemerkung: ""
+        },
+        {
+          id: 33,
+          art: "Unterflurhydrant",
+          lat: "50.101810",
+          lng: "10.138854",
+          durchlaufmenge: "100 l/min",
+          bemerkung: ""
+        },
+        {
+          id: 34,
+          art: "Unterflurhydrant",
+          lat: "50.101058",
+          lng: "10.139607",
+          durchlaufmenge: "80 l/min",
+          bemerkung: ""
+        },
+        {
+          id: 35,
+          art: "Unterflurhydrant",
+          lat: "50.101536",
+          lng: "10.140135",
+          durchlaufmenge: "80 l/min",
+          bemerkung: ""
+        },
+        {
+          id: 36,
+          art: "Unterflurhydrant",
+          lat: "50.101398",
+          lng: "10.140779",
+          durchlaufmenge: "80 l/min",
+          bemerkung: ""
+        },
+        {
+          id: 37,
+          art: "Unterflurhydrant",
+          lat: "50.097719",
+          lng: "10.141928",
+          durchlaufmenge: "80 l/min",
+          bemerkung: ""
+        },
+        {
+          id: 38,
+          art: "Unterflurhydrant",
+          lat: "50.097114",
+          lng: "10.141842",
+          durchlaufmenge: "100 l/min",
+          bemerkung: ""
+        },
+        {
+          id: 39,
+          art: "Unterflurhydrant",
+          lat: "50.096450",
+          lng: "10.141728",
+          durchlaufmenge: "100 l/min",
           bemerkung: ""
         },
         {
