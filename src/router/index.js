@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import LoginView from '../views/LoginView.vue'
 import HomeView from '../views/HomeView.vue'
 import EinsatzView from '../views/EinsatzView.vue'
 import HydrantenView from '../views/HydrantenView.vue'
@@ -11,41 +12,51 @@ import LeistungspruefungTHL from '../views/LeistungspruefungTHL.vue'
 const routes = [
   {
     path: '/',
+    name: 'login',
+    component: LoginView
+  },
+  {
+    path: '//:id',
+    name: 'home2',
+    component: HomeView
+  },
+  {
+    path: '/home/:id',
     name: 'home',
     component: HomeView
   },
   {
-    path: '/einsatz',
+    path: '/einsatz/:id',
     name: 'einsatz',
     component: EinsatzView
   },
   {
-    path: '/hydranten',
+    path: '/hydranten/:id',
     name: 'hydranten',
     component: HydrantenView
   },
   {
-    path: '/hilfeimwald',
+    path: '/hilfeimwald/:id',
     name: 'hilfeimwald',
     component: HilfeImWald
   },
   {
-    path: '/gefahrgut',
+    path: '/gefahrgut/:id',
     name: 'gefahrgut',
     component: GefahrgutView
   },
   {
-    path: '/lern-hub',
+    path: '/lern-hub/:id',
     name: 'lern-hub',
     component: LernView
   },
   {
-    path: '/mta2',
+    path: '/mta2/:id',
     name: 'mta2',
     component: MTA2
   },
   {
-    path: '/leistungspruefung-thl',
+    path: '/leistungspruefung-thl/:id',
     name: 'leistungspruefung-thl',
     component: LeistungspruefungTHL
   }

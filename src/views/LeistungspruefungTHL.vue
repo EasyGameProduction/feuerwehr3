@@ -79,7 +79,7 @@
             </center>
         </div>
     </div>
-    <Footer backLink="/lern-hub" />
+    <Footer backLink="/lern-hub/" />
 </template>
 
 <script>
@@ -338,7 +338,6 @@ export default {
         }
     },
     created() {
-
     },
     mounted() {
         document.onreadystatechange = () => {
@@ -350,6 +349,15 @@ export default {
 
 <style lang="scss">
 #leistungspruefung-thl {
+    display: block !important;
+    position:absolute !important;
+    height:auto !important;
+    bottom:0 !important;
+    top:0 !important;
+    left:0 !important;
+    right:0 !important;
+    margin-top: 4.5rem !important;
+    margin-bottom: 4.5rem !important;
     padding-left: 1rem;
     padding-right: 1rem;
     margin-top: 4.5rem;

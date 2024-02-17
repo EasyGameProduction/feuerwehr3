@@ -1,10 +1,10 @@
 <template>
     <Header ueberschrift="Lern-Hub" />
     <div id="lern-hub">
-        <button onclick="window.location.href='/leistungspruefung-thl'">
+        <button @click="$router.push('/leistungspruefung-thl/'+this.routeParams)">
             <h1>Leistungsprüfung THL</h1>
         </button>
-        <button onclick="window.location.href='/mta2'">
+        <button @click="$router.push('/mta2/'+this.routeParams)">
             <h1>MTA Teil 2</h1>
         </button>
     </div>
@@ -20,12 +20,29 @@ export default {
     components: {
         Header,
         Footer
+    },
+    data() {
+        return{
+            routeParams:String,
+        }
+    },
+    created(){
+        this.routeParams = this.$route.params.id;
     }
 }
 </script>
 
 <style lang="scss">
 #lern-hub{
+    display: block !important;
+    position:absolute !important;
+    height:auto !important;
+    bottom:0 !important;
+    top:0 !important;
+    left:0 !important;
+    right:0 !important;
+    margin-top: 4.5rem !important;
+    margin-bottom: 4.5rem !important;
     margin-top: 4.5rem;
     height: 72vh;
     overflow-y: scroll;
