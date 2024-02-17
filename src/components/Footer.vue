@@ -1,6 +1,6 @@
 <template>
     <div id="Footer">
-        <a id="HomeButton" :href="backLink+this.routeParams">
+        <a id="HomeButton" :href="backLink">
             <img src="../assets/Icons/HomeButton.svg">
         </a>
     </div>
@@ -11,14 +11,6 @@ export default {
   name: 'Footer',
   props: {
     backLink: String
-  },
-  data() {
-        return{
-            routeParams:String,
-        }
-    },
-  created(){
-    this.routeParams = this.$route.params.id;
   }
 }
 </script>

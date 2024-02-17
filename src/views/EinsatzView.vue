@@ -1,13 +1,13 @@
 <template>
     <Header ueberschrift="Einsatz" />
     <div id="einsatz">
-        <button @click="$router.push('/hydranten/'+this.routeParams)">
+        <button onclick="window.location.href='/hydranten'">
             <img src="../assets/Icons/Hydrant.svg">
         </button>
-        <button @click="$router.push('/gefahrgut/'+this.routeParams)">
+        <button onclick="window.location.href='/gefahrgut'">
             <img src="../assets/Icons/Gefahrgut.svg">
         </button>
-        <button @click="$router.push('/hilfeimwald/'+this.routeParams)">
+        <button onclick="window.location.href='/hilfeimwald'">
             <img src="../assets/Icons/HilfeImWald.svg">
         </button>
         <button>
@@ -20,7 +20,7 @@
             <img src="../assets/Icons/Brandmeldeanlage.svg">
         </button>
     </div>
-    <Footer :backLink="`/`"/>
+    <Footer backLink="/"/>
 </template>
   
 <script>
@@ -32,16 +32,6 @@ export default {
     components: {
         Header,
         Footer
-    },
-    data() {
-        return{
-            routeParams:String,
-        }
-    },
-    methods:{
-    },
-    created(){
-        this.routeParams = this.$route.params.id;
     }
 }
 </script>

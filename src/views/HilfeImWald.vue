@@ -3,7 +3,7 @@
     <div id="hilfeimwald">
         <iframe src="https://rettungspunkte.com/" title="Karte"></iframe>
     </div>
-    <Footer backLink="/einsatz/"/>
+    <Footer backLink="/einsatz"/>
 </template>
 
 <script>
@@ -15,32 +15,16 @@ export default {
     components: {
         Header,
         Footer
-    },
-    data() {
-        return{
-        }
-    },
-    created(){
     }
 }
 </script>
 
 <style lang="scss">
 #hilfeimwald{
-    display: block !important;
-    position:absolute !important;
-    height:auto !important;
-    bottom:0 !important;
-    top:0 !important;
-    left:0 !important;
-    right:0 !important;
-    margin-top: 4.5rem !important;
-    margin-bottom: 4.5rem !important;
-    width: 100%;
+    margin-top: 4.5rem;
     iframe{
-        //height: 72vh;
-        width: 100vw !important;
-        height: 100% !important;
+        width: 100%;
+        height: 72vh;
         margin: 0;
         padding: 0;
     }

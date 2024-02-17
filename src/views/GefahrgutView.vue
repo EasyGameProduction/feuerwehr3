@@ -1,14 +1,14 @@
 <template>
     <Header ueberschrift="Gefahrgut"/>
     <div id="gefahrgut">
-        <GeHome class="geHome" v-show="gefahrgutHome" @gefahrnummerActive="openGeNumber" @unNummerActive="openGeUN" @eriActive="openGeERI" @klassenActive="openGeKlassen" @ghsActive="openGeGHS"/>
+        <GeHome v-show="gefahrgutHome" @gefahrnummerActive="openGeNumber" @unNummerActive="openGeUN" @eriActive="openGeERI" @klassenActive="openGeKlassen" @ghsActive="openGeGHS"/>
         <GeNumber v-if="gefahrgutNumber"/>
         <GeERI v-if="gefahrgutERI"/>
         <GeKlassen v-if="gefahrgutKlassen"/>
         <GeGHS v-if="gefahrgutGHS"/>
         <GeUN v-if="gefahrgutUN"/>
     </div>
-    <Footer :backLink="gefahrgutHome?`/einsatz/`:`/gefahrgut/`"/>
+    <Footer :backLink="gefahrgutHome?'/einsatz':'/gefahrgut'"/>
 </template>
 
 <script>
@@ -99,33 +99,15 @@ export default {
             const emits = ['gefahrnummerActive', 'unNummerActive', 'eriActive', 'klassenActive', 'ghsActive', 'unActive'];
             return { emits };
         }
-    },
-    created(){
     }
 }
 </script>
 
 <style lang="scss">
 #gefahrgut{
-    display: block !important;
-  position:absolute !important;
-  height:auto !important;
-  bottom:0 !important;
-  top:0 !important;
-  left:0 !important;
-  right:0 !important;
-  margin-top: 4.5rem !important;
-  margin-bottom: 4.5rem !important;
+    margin-top: 8.5rem;
     button{
         background-color: white;
-    }
-    .geHome{
-        margin-top: 4.1rem;
-        position: absolute !important;
-        bottom: auto;
-        top: auto;
-        right: 0;
-        left: 0;
     }
 }
 </style>

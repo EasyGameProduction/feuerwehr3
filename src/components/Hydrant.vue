@@ -31,14 +31,14 @@ export default {
   methods: {
     hydrantOnClick: function (durchlaufmenge, bemerkung){
         Swal.fire(
-            durchlaufmenge + " l/min",
+            durchlaufmenge,
             bemerkung
         )
     }
   },
   created(){
-    //console.log(this.markerPosition2);
-    //console.log(this.$props.markerPosition);
+    console.log(this.markerPosition2);
+    console.log(this.$props.markerPosition);
     this.markerPosition[0] = this.$props.lat;
     this.markerPosition[1] = this.$props.lng;
   }
@@ -51,6 +51,6 @@ export default {
     left: 50%;
     transform: translateX(-50%);
     max-height: 2.5rem !important;
-    filter: drop-shadow(0 0 0.05rem rgb(53, 53, 53));
+    
   }
 </style>

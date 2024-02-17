@@ -2,11 +2,11 @@
   <div id="home">
     <img src="../assets/FeuerwehrLogo.png">
     <h1>FEUERWEHR</h1>
-    <button class="EinsatzButton" @click="$router.push('/einsatz/'+this.routeParams)">
+    <button class="EinsatzButton" onclick="window.location.href='/einsatz'">
       <img src="../assets/Icons/Einsatz.png">
       <h1>Einsatz</h1>
     </button><br>
-    <button class="LernButton" @click="$router.push('/lern-hub/'+this.routeParams)">
+    <button class="LernButton" onclick="window.location.href='/lern-hub'">
       <img src="../assets/Icons/lern-hub.svg">
       <h1>Lern-Hub</h1>
     </button>
@@ -19,14 +19,6 @@ export default {
   name: 'HomeView',
   components: {
     
-  },
-  data() {
-      return{
-          routeParams:String,
-      }
-  },
-  created(){
-    this.routeParams = this.$route.params.id;
   }
 }
 </script>

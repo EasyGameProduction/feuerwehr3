@@ -1,6 +1,6 @@
 <template>
-    <l-tile-layer :url="this.$props.url" :attribution="attribution"></l-tile-layer>
-    <l-polyline  @click="leitungOnClick()" :lat-lngs="polyline.latlngs" :color="polyline.color" weight="7"></l-polyline>
+    <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
+    <l-polyline  @click="leitungOnClick()" :lat-lngs="polyline.latlngs" :color="polyline.color"></l-polyline>
 </template>
 
 <script>
@@ -14,13 +14,12 @@ export default {
     LPolyline
   },
   props: {
-    url: String,
     coords: Array,
     bezeichnung: String
   },
   data() {
     return {
-      //url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       attribution:
         '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
       polyline: {
